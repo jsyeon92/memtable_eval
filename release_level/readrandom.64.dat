@@ -8,4 +8,4 @@
 10 8 skip_list 64799
 11 8 cuckoo 81348
 13 16 skip_list 101094
-14 16 cuckoo
+14 16 cuckoo 0

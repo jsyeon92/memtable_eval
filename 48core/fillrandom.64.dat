@@ -1,0 +1,21 @@
+# line thread mrep count
+1 1 skip_list 287641
+2 1 cuckoo 372133
+3 1 prefix_hash 363327
+4 1 hash_linkedlist 390028
+6 2 skip_list 296618
+7 2 cuckoo 297961
+8 2 prefix_hash 299667
+9 2 hash_linkedlist 298685
+11 4 skip_list 464564
+12 4 cuckoo 424786
+13 4 prefix_hash 374364
+14 4 hash_linkedlist 398653
+16 8 skip_list 478484
+17 8 cuckoo 413001
+18 8 prefix_hash 368667
+19 8 hash_linkedlist 384733
+21 16 skip_list 478186
+22 16 cuckoo 408393
+23 16 prefix_hash 369613
+24 16 hash_linkedlist

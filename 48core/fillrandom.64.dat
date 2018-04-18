@@ -17,5 +17,5 @@
 19 8 hash_linkedlist 384733
 21 16 skip_list 478186
 22 16 cuckoo 408393
-23 16 prefix_hash 369613
-24 16 hash_linkedlist
+23 16 prefix_hash 370996
+24 16 hash_linkedlist 375088

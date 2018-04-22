@@ -1,0 +1,16 @@
+# line thread mrep count
+1 1 skip_list 240626
+2 1 prefix_hash 286580
+3 1 hash_linkedlist 318085
+5 2 skip_list 287709
+6 2 prefix_hash 301154
+7 2 hash_linkedlist 303237
+9 4 skip_list 419154
+10 4 prefix_hash 394667
+11 4 hash_linkedlist 360113
+13 8 skip_list 632612
+14 8 prefix_hash 421211
+15 8 hash_linkedlist 271750
+17 16 skip_list 881607
+18 16 prefix_hash 380206
+19 16 hash_linkedlist 188082

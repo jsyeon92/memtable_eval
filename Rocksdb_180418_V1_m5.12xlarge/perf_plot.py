@@ -58,7 +58,7 @@ options = [('skip_list', 'solid', 0.5, 'orange'),
 xm = []
 w='mrep="%s"' % "cuckoo"
 for x, y in t.query(select='thread,line', where=w):
-    y = str(float(y) - 0.5)
+    y = str(float(y) + 0.5)
     xm.append((x, y))
 
 #ym = [ymax // 1000000,ymax]

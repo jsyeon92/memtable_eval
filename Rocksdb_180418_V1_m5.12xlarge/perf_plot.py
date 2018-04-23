@@ -36,9 +36,11 @@ ctype = 'eps' #if len(sys.argv) < 2 else sys.argv[1]
 t = table(file=data_file)
 #t.dump()
 ymax = round(get_ymax(['count'], t),-1)
+global_ymax=int(sys.argv[2])
+
 #ymax=sys.argv[2]
 c = canvas(ctype, title=data_file, dimensions=['3in', '1.85in'])
-d = drawable(canvas=c, xrange=[0,26], yrange=[-1,ymax],
+d = drawable(canvas=c, xrange=[0,26], yrange=[-1,global_ymax*1000],
             #coord=[0,25]
             # dimensions=['3in','1.85in']
             )
@@ -61,8 +63,8 @@ for x, y in t.query(select='thread,line', where=w):
 
 #ym = [ymax // 1000000,ymax]
 ym = []
-global_ymax=int(sys.argv[2])
-ym.append((ymax // 1000 , global_ymax))
+#ym.append((ymax // 1000 , global_ymax))
+ym.append((global_ymax,global_ymax*1000))
 
 axis(drawable=d, style='box',
 #   xauto=[1,15,1],

@@ -24,7 +24,7 @@ def get_ymax(coll_list, t):
 
 #data_file='memtable.hit.64.dat'
 
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
     print("./plot.py memtable.hit.dat")
     sys.exit()
 
@@ -35,7 +35,8 @@ ctype = 'eps' #if len(sys.argv) < 2 else sys.argv[1]
 
 t = table(file=data_file)
 #t.dump()
-ymax = round(get_ymax(['count'], t),-1)
+#ymax = round(get_ymax(['count'], t),-1)
+ymax=sys.argv[2]
 c = canvas(ctype, title=data_file, dimensions=['3in', '1.85in'])
 d = drawable(canvas=c, xrange=[0,26], yrange=[-1,ymax],
             #coord=[0,25]
@@ -50,7 +51,7 @@ d = drawable(canvas=c, xrange=[0,26], yrange=[-1,ymax],
 options = [('skip_list', 'solid', 0.5, 'orange'),
             ('cuckoo', 'solid', 0.5, 'pink'),
             ('prefix_hash', 'dline1', 0.5, 'silver'),
-            ('hash_linkedlist', 'dline1', 0.5, 'lvory'),]
+            ('hash_linkedlist', 'dline1', 0.5, 'black'),]
 
 xm = []
 w='mrep="%s"' % "cuckoo"
@@ -60,6 +61,7 @@ for x, y in t.query(select='thread,line', where=w):
 
 #ym = [ymax // 1000000,ymax]
 ym = []
+ymax=int(ymax)
 ym.append((ymax // 1000,ymax))
 
 axis(drawable=d, style='box',

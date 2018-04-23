@@ -10,7 +10,7 @@ def get_ymax(coll_list, t):
     for c in coll_list:
         ymax = ymax if t.getmax(c) < ymax else t.getmax(c)
 
-    ymax = ymax + ymax * 0.1
+    ymax = ymax + ymax * 0.3
 
     round_ymax = 0
     round_scale = 10 if ymax < 100 else 100
@@ -37,7 +37,7 @@ t = table(file=data_file)
 #t.dump()
 ymax = get_ymax(['count'], t)
 c = canvas(ctype, title=data_file, dimensions=['3in', '1.85in'])
-d = drawable(canvas=c, xrange=[0,16], yrange=[-1,ymax],
+d = drawable(canvas=c, xrange=[0,26], yrange=[-1,ymax],
             #coord=[0,25]
             # dimensions=['3in','1.85in']
             )
@@ -48,12 +48,14 @@ d = drawable(canvas=c, xrange=[0,16], yrange=[-1,ymax],
  #    linedash=[2,2])
 
 options = [('skip_list', 'solid', 0.5, 'pink'),
-            ('cuckoo', 'dline2', 0.5, 'blue')]
+			('cuckoo', 'solid', 0.5, 'blue'),
+            ('prefix_hash', 'dline1', 0.5, 'green'),
+            ('hash_linkedlist', 'solid', 0.5, 'black'),]
 
 xm = []
 w='mrep="%s"' % "cuckoo"
 for x, y in t.query(select='thread,line', where=w):
-    y = str(float(y) - 0.5)
+    y = str(float(y) + 0.5)
     xm.append((x, y))
 
 #ym = [ymax // 1000000,ymax]
@@ -61,7 +63,7 @@ ym = []
 ym.append((ymax // 1000,ymax))
 
 axis(drawable=d, style='box',
-#   xauto=[1,15,1], 
+#   xauto=[1,15,1],
     title=data_file,
     ytitle="IOPS(K)",
 	ytitleshift=[10,0],
@@ -73,7 +75,7 @@ axis(drawable=d, style='box',
     #xaxisposition=0,
     linewidth=0.5, xlabelfontsize=8.0, doxlabels=True,
     )
-#xlabelformat='\'%s', 
+#xlabelformat='\'%s',
 #   xlabelshift=[0,-30],linecolor='black', xlabelfontcolor='black')'
 p = plotter()
 L = legend()

@@ -8,7 +8,7 @@ DATA_DIR=.
 
 disable_wal=0
 ops=100
-mrep="skip_list cuckoo"
+mrep="skip_list cuckoo prefix_hash hash_linkedlist"
 bufflist="64 16384"
 factors="
 	fillrandom

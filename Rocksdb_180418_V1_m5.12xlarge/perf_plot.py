@@ -62,7 +62,7 @@ for x, y in t.query(select='thread,line', where=w):
 #ym = [ymax // 1000000,ymax]
 ym = []
 ymax=int(ymax)
-ym.append((ymax // 1000,ymax))
+ym.append((ymax,ymax*1000))
 
 axis(drawable=d, style='box',
 #   xauto=[1,15,1],
